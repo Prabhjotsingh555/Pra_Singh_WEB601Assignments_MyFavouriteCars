@@ -1,26 +1,74 @@
-import { CommonModule } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
-import { Content } from '../helper-files/content-interface';
+import { Component } from '@angular/core';
+// import { ContentList } from '../helper-files/content-list';
+import { Content} from '../helper-file/content-interface'
 
 @Component({
   selector: 'app-content-list',
-  standalone: true,
-  imports: [CommonModule],
   templateUrl: './content-list.component.html',
-  styleUrls: ['./content-list.component.scss']
+  styleUrl: './content-list.component.scss'
 })
-export class ContentListComponent implements OnInit {
-  @Input() contentList: Content[] = [];
+export class ContentListComponent {
 
-  ngOnInit(): void {
-    this.contentList = [
-      { id: 1, title: 'Mustang', description: 'The classic Ford Mustang, an iconic American muscle car, first hit the streets in the 1960s and has since become a symbol of power and style. With its unmistakable fastback design, roaring V8 engine, and distinctive pony emblem, the old Mustang captures the essence of the golden era of muscle cars. Whether it\'s the sleek lines, throaty exhaust note, or the thrill of open-road cruising, the old Mustang continues to evoke nostalgia and admiration among automotive enthusiasts worldwide', creator: 'Jim Farley', imgURL: 'https://th.bing.com/th/id/R.d331e72bba1c35ade48ac5b2fef3b48d?rik=pYpgKKdrCeUkXw&riu=http%3a%2f%2f2.bp.blogspot.com%2f-jLItxCxFTTo%2fUIDuNUPZHAI%2fAAAAAAAALqU%2fhh6-Fgcj1cA%2fs1600%2fClassic%2bCars%2bWallpapers%2b5.jpg&ehk=KD1BM6l24Wl2vLZAYKJmhXPzp9BQX%2f3d6zv4%2fe%2fgY4A%3d&risl=&pid=ImgRaw&r=0', type: 'Type 1', tags: ['tag1', 'tag2', 'tag3'] },
-      { id: 2, title: 'Charger', description: 'The Dodge Charger, a legendary name in the automotive world, has been a symbol of bold performance and aggressive styling since its introduction in the 1960s. Known for its muscular stance, powerful engine options, and unmistakable front grille, the Charger has earned its place in the pantheon of American muscle cars. From the high-performance variants to the classic design elements, the Charger stands as a testament to the pursuit of raw power and uncompromising style on the open road.', creator: 'Carlos Tavares', imgURL: 'https://amazingclassiccars.com/wp-content/uploads/2021/02/1a5181279fe9cfc240bff40f9299cd60-scaled.jpg', type: 'Type 2',tags: ['tag1', 'tag2', 'tag3'] },
-      { id: 3, title: 'Chevrolet', description: 'The Chevrolet lineup, steeped in American automotive history, has produced a diverse range of vehicles over the years. From the timeless elegance of classic models to the contemporary innovation seen in modern iterations, Chevrolet has maintained a reputation for quality and performance. Whether it\'s the enduring charm of the Chevrolet Impala, the rugged capability of the Silverado, or the efficiency of the Malibu, each model reflects the brand\'s commitment to providing a reliable and enjoyable driving experience for generations of drivers.', creator: 'Mary Barra', imgURL: 'https://th.bing.com/th/id/R.3eb2e3097b23428fbd8dfbc0f6c45fef?rik=uCTCXWsNi3SUYg&riu=http%3a%2f%2fwww.musclecarszone.com%2fwp-content%2fuploads%2f2013%2f10%2f1970-chevrolet-chevelle-ss-54.jpg&ehk=rPA9Rkbp2fQcETTvieV%2fITt7JltO%2f%2bGxe4C77kXQIlM%3d&risl=&pid=ImgRaw&r=0', type: 'Type 3',tags: ['tag1', 'tag2', 'tag3'] },
-      { id: 4, title: 'Mustang', description: 'The classic Ford Mustang, an iconic American muscle car, first hit the streets in the 1960s and has since become a symbol of power and style. With its unmistakable fastback design, roaring V8 engine, and distinctive pony emblem, the old Mustang captures the essence of the golden era of muscle cars. Whether it\'s the sleek lines, throaty exhaust note, or the thrill of open-road cruising, the old Mustang continues to evoke nostalgia and admiration among automotive enthusiasts worldwide', creator: 'Jim Farley', imgURL: 'https://th.bing.com/th/id/R.d331e72bba1c35ade48ac5b2fef3b48d?rik=pYpgKKdrCeUkXw&riu=http%3a%2f%2f2.bp.blogspot.com%2f-jLItxCxFTTo%2fUIDuNUPZHAI%2fAAAAAAAALqU%2fhh6-Fgcj1cA%2fs1600%2fClassic%2bCars%2bWallpapers%2b5.jpg&ehk=KD1BM6l24Wl2vLZAYKJmhXPzp9BQX%2f3d6zv4%2fe%2fgY4A%3d&risl=&pid=ImgRaw&r=0', type: 'Type 1', tags: ['tag1', 'tag2', 'tag3'] },
-      { id: 5, title: 'Charger', description: 'The Dodge Charger, a legendary name in the automotive world, has been a symbol of bold performance and aggressive styling since its introduction in the 1960s. Known for its muscular stance, powerful engine options, and unmistakable front grille, the Charger has earned its place in the pantheon of American muscle cars. From the high-performance variants to the classic design elements, the Charger stands as a testament to the pursuit of raw power and uncompromising style on the open road.', creator: 'Carlos Tavares', imgURL: 'https://amazingclassiccars.com/wp-content/uploads/2021/02/1a5181279fe9cfc240bff40f9299cd60-scaled.jpg', type: 'Type 2', tags: ['tag1', 'tag2', 'tag3'] },
-      { id: 6, title: 'Chevrolet', description: 'The Chevrolet lineup, steeped in American automotive history, has produced a diverse range of vehicles over the years. From the timeless elegance of classic models to the contemporary innovation seen in modern iterations, Chevrolet has maintained a reputation for quality and performance. Whether it\'s the enduring charm of the Chevrolet Impala, the rugged capability of the Silverado, or the efficiency of the Malibu, each model reflects the brand\'s commitment to providing a reliable and enjoyable driving experience for generations of drivers.', creator: 'Mary Barra', imgURL: 'https://th.bing.com/th/id/R.3eb2e3097b23428fbd8dfbc0f6c45fef?rik=uCTCXWsNi3SUYg&riu=http%3a%2f%2fwww.musclecarszone.com%2fwp-content%2fuploads%2f2013%2f10%2f1970-chevrolet-chevelle-ss-54.jpg&ehk=rPA9Rkbp2fQcETTvieV%2fITt7JltO%2f%2bGxe4C77kXQIlM%3d&risl=&pid=ImgRaw&r=0', type: 'Type 3', tags: ['tag1', 'tag2', 'tag3'] },
-    
-    ];
+  name : string | undefined;
+   contentArray: Content[] = [];
+  
+  
+  constructor() {
+    this.contentArray.push(
+      {
+        id: 1,
+        title: 'Chevrolet Bel Air',
+        description: 'A classic American car known for its iconic design and powerful V8 engine.',
+        creator: 'Chevrolet',
+        imgURL: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/57_Chevy_BelAir.jpg/420px-57_Chevy_BelAir.jpg',
+        type: 'Sedan',
+        tags: ['American Classic', 'Vintage', 'V8']
+      },
+      {
+        id: 2,
+        title: 'Ford Mustang',
+        description: 'The legendary pony car that revolutionized the muscle car segment with its sleek design.',
+        creator: 'Ford',
+        imgURL: 'https://th.bing.com/th/id/OIP.BIuhyDTLFcHM4O2r2Ltz9wHaEK?w=273&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7',
+        type: 'Muscle Car',
+        tags: ['Pony Car', 'Muscle', 'Iconic']
+      },
+      {
+        id: 3,
+        title: 'Mercedes-Benz 300SL Gullwing',
+        description: 'An iconic sports car featuring distinctive gullwing doors and a powerful inline-six engine.',
+        creator: 'Mercedes-Benz',
+        imgURL: 'https://th.bing.com/th/id/OIP.qQoAKowWULCOfKW2HTXIsAHaFj?w=252&h=189&c=7&r=0&o=5&dpr=1.3&pid=1.7',
+        type: 'Sports Car',
+        tags: ['Classic Sports Car', 'Gullwing', 'Luxury']
+      },
+      {
+        id: 4,
+        title: 'Jaguar E-Type',
+        description: 'A British classic known for its elegant design and high-performance capabilities.',
+        creator: 'Jaguar',
+        imgURL: 'https://th.bing.com/th/id/OIP.4nCbM_ti4FXMT8ghcw40PQHaFj?rs=1&pid=ImgDetMain',
+        type: 'Roadster',
+        tags: ['British Classic', 'Convertible', 'Elegant']
+      },
+      {
+        id: 5,
+        title: 'Porsche 911',
+        description: 'A timeless German sports car that has become a symbol of precision engineering and performance.',
+        creator: 'Porsche',
+        imgURL: 'https://philipraby.co.uk/wp-content/uploads/2020/06/1.-911-Carrera-3.2-2048x1365.jpeg',
+        type: 'Coupe',
+        tags: ['German Engineering', 'Classic Coupe', 'Performance']
+      },
+      {
+        id: 6,
+        title: 'Chevrolet Corvette Stingray',
+        description: 'A legendary American sports car with a sleek design and powerful V8 engine.',
+        creator: 'Chevrolet',
+        imgURL: 'https://th.bing.com/th/id/OIP.K-Kw9kqnRb9VvB2SIDRJxQHaE8?rs=1&pid=ImgDetMain',
+        type: 'Sports Car',
+        tags: ['American Muscle', 'V8', 'Stingray']
+      }
+    );
   }
-}
+}  

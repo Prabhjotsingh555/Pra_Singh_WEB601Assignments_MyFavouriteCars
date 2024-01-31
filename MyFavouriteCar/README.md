@@ -25,6 +25,3 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-
-
-Old classic cars evoke a sense of nostalgia and admiration, transporting enthusiasts to a bygone era of automotive elegance and craftsmanship. These vintage automobiles, often characterized by their timeless designs and meticulous attention to detail, represent a rich tapestry of automotive history. Each classic car tells a unique story, reflecting the technological advancements and stylistic preferences of its era. From the graceful curves of a 1950s Cadillac to the streamlined beauty of a 1960s Ford Mustang, these vehicles are more than just modes of transportation—they are rolling works of art. Beyond their aesthetic appeal, classic cars also hold a special place in the hearts of collectors and enthusiasts who appreciate the mechanical simplicity and hands-on nature of these automotive relics. Whether it's the throaty roar of an engine or the smell of aged leather, classic cars provide a sensory experience that transcends time, making them a cherished and enduring aspect of automotive culture.
