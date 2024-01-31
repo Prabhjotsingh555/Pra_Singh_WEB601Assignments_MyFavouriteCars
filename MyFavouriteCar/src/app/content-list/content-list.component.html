@@ -1,7 +1,9 @@
 <h1>My Favourite Cars</h1>
 
 <ng-container *ngFor="let item of contentArray; let i=index">
+
     <div class="card" *ngIf="i < 5">
+      
       <img class="image" [src]="item.imgURL" alt="{{ item.title }} Image"  />
       <div class="content">
         <h2>{{ item.title }}</h2>

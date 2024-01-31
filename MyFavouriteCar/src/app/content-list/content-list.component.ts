@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-// import { ContentList } from '../helper-files/content-list';
+
 import { Content} from '../helper-file/content-interface'
 
 @Component({
