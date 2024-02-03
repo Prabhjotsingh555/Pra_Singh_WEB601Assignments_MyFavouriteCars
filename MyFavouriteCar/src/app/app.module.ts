@@ -6,10 +6,12 @@ import { AppComponent } from './app.component';
 
 import { ContentListComponent } from './content-list/content-list.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
-    ContentListComponent
+    ContentListComponent,
+
   ],
   imports: [
     BrowserModule,

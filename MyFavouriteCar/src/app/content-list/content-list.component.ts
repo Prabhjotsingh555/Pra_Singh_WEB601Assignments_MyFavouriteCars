@@ -68,7 +68,16 @@ export class ContentListComponent {
         imgURL: 'https://th.bing.com/th/id/OIP.K-Kw9kqnRb9VvB2SIDRJxQHaE8?rs=1&pid=ImgDetMain',
         type: 'Sports Car',
         tags: ['American Muscle', 'V8', 'Stingray']
+      },
+       {
+        id: 7,
+        title: 'Tesla Model S',
+        description: 'An electric sedan known for its cutting-edge technology and high-performance.',
+        creator: 'Tesla',
+        imgURL: 'https://th.bing.com/th/id/OIP.xb-7H5a1hynUJiG9XNFEbAHaEY?pid=ImgDet&rs=1',
+        type: 'Electric Car',
+        tags: ['Innovative', 'Sustainable', 'High-Tech']
       }
     );
   }
-}  
+}
