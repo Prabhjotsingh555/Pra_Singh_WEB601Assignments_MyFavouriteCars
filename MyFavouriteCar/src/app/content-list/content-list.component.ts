@@ -13,6 +13,7 @@ export class ContentListComponent {
    contentArray: Content[] = [];
    typePresent:boolean | undefined;
    inputValue:string='';
+   defaultImageUrl:string='https://th.bing.com/th/id/OIP.tGHa-fLqGx5i6F6D8FVHygHaEy?w=299&h=194&c=7&r=0&o=5&dpr=1.3&pid=1.7';
   
   
   constructor() {
@@ -31,7 +32,7 @@ export class ContentListComponent {
         title: 'Ford Mustang',
         description: 'The legendary pony car that revolutionized the muscle car segment with its sleek design.',
         creator: 'Ford',
-        imgURL: 'https://th.bing.com/th/id/OIP.BIuhyDTLFcHM4O2r2Ltz9wHaEK?w=273&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7',
+        imgURL: '',
         type: 'ElectricCar',
         tags: ['Pony Car', 'Muscle', 'Iconic']
       },

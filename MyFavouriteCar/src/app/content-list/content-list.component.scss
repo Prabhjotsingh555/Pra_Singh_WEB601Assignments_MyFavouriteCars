@@ -1,5 +1,8 @@
 /* General styles */
-
+img{
+  max-width: 400px;
+  height: 400px;
+}
 .search-container {
   margin-bottom: 20px;
 }
@@ -32,7 +35,6 @@
 
 .item-container {
   margin-bottom: 20px;
-  display: flex;
 }
 
 .item-card {
@@ -40,7 +42,7 @@
   border-radius: 5px;
   padding: 10px;
   margin-bottom: 10px;
-  
+ 
 }
 
 .title {
@@ -48,20 +50,28 @@
 }
 
 .item-image {
-  max-width: 400px;
-  height: auto;
+  max-width: 400%;
+  height: 400%;
 }
 
 /* Specific styles for different types */
-
 .no-type {
-  background-color: #eed0d0;
+  background-color: #f9f9f9;
+  display: flex;
 }
 
 .ElectricCar {
   background-color: #c7e3ff;
+  display: flex;
+
 }
 
 .SportsCar {
-  background-color: #ddfae8;
+  background-color: #e6f0ff;
+  display: flex;
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-around;
 }

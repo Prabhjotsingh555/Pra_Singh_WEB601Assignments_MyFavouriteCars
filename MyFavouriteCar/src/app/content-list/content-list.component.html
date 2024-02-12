@@ -12,8 +12,12 @@
     <h2>Items with no type :</h2>
     <p class="title">{{ item.title }}</p>
     <p class="description">{{ item.description }}</p>
-    <p class="creator">Creator: {{ item.creator }}</p>
-    <img *ngIf="item.imgURL" [src]="item.imgURL" alt="{{ item.title }} Image" class="item-image" />
+    <p HoverAffect [hoverStyle]="{ 'fontWeight': 'bold'}">Tags :{{ item.tags }}</p>
+    
+    <img *ngIf="item.imgURL; else defaultImage" [src]="item.imgURL" alt="{{ item.title }} Image" />
+    <ng-template #defaultImage>
+      <img [src]="defaultImageUrl" alt="Default Image" />
+    </ng-template>
   </div>
 </div>
 
@@ -24,12 +28,16 @@
     <p class="title">{{ item.title }}</p>
     <p class="description">{{ item.description }}</p>
     <p class="creator">Creator: {{ item.creator }}</p>
-    <p class="type">Type: {{ item.type }}</p>
-    <img *ngIf="item.imgURL" [src]="item.imgURL" alt="{{ item.title }} Image" class="item-image" />
+    <p HoverAffect [hoverStyle]="{ 'textDecoration': 'underline' }">Type: {{ item.type }}</p>
+    <p HoverAffect [hoverStyle]="{ 'fontWeight': 'bold'}">Tags :{{ item.tags }}</p>
+    <img *ngIf="item.imgURL; else defaultImage" [src]="item.imgURL" alt="{{ item.title }} Image" />
+    <ng-template #defaultImage>
+      <img [src]="defaultImageUrl" alt="Default Image" />
+    </ng-template>
   </div>
 </div>
 
-<div class="card-container">
+
   <div class="item-container SportsCar">
  
     <div *ngFor="let item of contentArray | contentTypeFilter:'SportsCar'" class="item-card digital-card">
@@ -37,8 +45,12 @@
       <p class="title">{{ item.title }}</p>
       <p class="description">{{ item.description }}</p>
       <p class="creator">Creator: {{ item.creator }}</p>
-      <p class="type">Type: {{ item.type }}</p>
-      <img *ngIf="item.imgURL" [src]="item.imgURL" alt="{{ item.title }} Image" class="item-image" />
+      <p HoverAffect [hoverStyle]="{ 'textDecoration': 'underline' }">Type: {{ item.type }}</p>
+      <p HoverAffect [hoverStyle]="{ 'fontWeight': 'bold' }">Tags :{{ item.tags }}</p>
+      <img *ngIf="item.imgURL; else defaultImage" [src]="item.imgURL" alt="{{ item.title }} Image" />
+      <ng-template #defaultImage>
+        <img [src]="defaultImageUrl" alt="Default Image" />
+      </ng-template>
     </div>
   </div>
-</div>
+
