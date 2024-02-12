@@ -1,24 +1,44 @@
-<h1>My Favourite Cars</h1>
+<div class="search-container">
+  <label class="search-label">Search Here</label>
+  <input type="text" [(ngModel)]="inputValue" class="search-input">
+  <button (click)="search(inputValue)" class="search-button">Search</button>
+  <h3 *ngIf="typePresent" class="success-text">This Car is present in the list.</h3>
+  <h3 *ngIf="!typePresent && typePresent != undefined" class="error-text">This Car is not present in the list.</h3>
+</div>
 
-<ng-container *ngFor="let item of contentArray; let i=index">
+<div class="item-container no-type">
+  
+  <div *ngFor="let item of contentArray | contentTypeFilter" class="item-card no-type-card">
+    <h2>Items with no type :</h2>
+    <p class="title">{{ item.title }}</p>
+    <p class="description">{{ item.description }}</p>
+    <p class="creator">Creator: {{ item.creator }}</p>
+    <img *ngIf="item.imgURL" [src]="item.imgURL" alt="{{ item.title }} Image" class="item-image" />
+  </div>
+</div>
 
-    <div class="card" *ngIf="i < 5">
-      
-      <img class="image" [src]="item.imgURL" alt="{{ item.title }} Image"  />
-      <div class="content">
-        <h2>{{ item.title }}</h2>
-        <p class="description">{{ item.description }}</p>
-        <p class="creator">Creator: {{ item.creator }}</p>
-        <p class="type" *ngIf="item.type">Type: {{ item.type }}</p>
-        <div class="tags" *ngIf="item.tags && item.tags.length > 0">
-          <p>Tags:</p>
-          <ul class="list">
-            <li class="tag" *ngFor="let tag of item.tags">{{ tag }}</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </ng-container>
+<div class="item-container ElectricCar">
+  
+  <div *ngFor="let item of contentArray | contentTypeFilter:'ElectricCar'" class="item-card ElectricCar-card">
+    <h2>Items with type 'ElectricCar':</h2>
+    <p class="title">{{ item.title }}</p>
+    <p class="description">{{ item.description }}</p>
+    <p class="creator">Creator: {{ item.creator }}</p>
+    <p class="type">Type: {{ item.type }}</p>
+    <img *ngIf="item.imgURL" [src]="item.imgURL" alt="{{ item.title }} Image" class="item-image" />
+  </div>
+</div>
 
-     
+<div class="card-container">
+  <div class="item-container SportsCar">
  
+    <div *ngFor="let item of contentArray | contentTypeFilter:'SportsCar'" class="item-card digital-card">
+      <h2>Items with type 'SportsCar':</h2>
+      <p class="title">{{ item.title }}</p>
+      <p class="description">{{ item.description }}</p>
+      <p class="creator">Creator: {{ item.creator }}</p>
+      <p class="type">Type: {{ item.type }}</p>
+      <img *ngIf="item.imgURL" [src]="item.imgURL" alt="{{ item.title }} Image" class="item-image" />
+    </div>
+  </div>
+</div>

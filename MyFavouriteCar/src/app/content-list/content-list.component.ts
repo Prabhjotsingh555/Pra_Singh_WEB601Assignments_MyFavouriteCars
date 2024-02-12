@@ -11,6 +11,8 @@ export class ContentListComponent {
 
   name : string | undefined;
    contentArray: Content[] = [];
+   typePresent:boolean | undefined;
+   inputValue:string='';
   
   
   constructor() {
@@ -21,7 +23,7 @@ export class ContentListComponent {
         description: 'A classic American car known for its iconic design and powerful V8 engine.',
         creator: 'Chevrolet',
         imgURL: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/57_Chevy_BelAir.jpg/420px-57_Chevy_BelAir.jpg',
-        type: 'Sedan',
+        type: '',
         tags: ['American Classic', 'Vintage', 'V8']
       },
       {
@@ -30,7 +32,7 @@ export class ContentListComponent {
         description: 'The legendary pony car that revolutionized the muscle car segment with its sleek design.',
         creator: 'Ford',
         imgURL: 'https://th.bing.com/th/id/OIP.BIuhyDTLFcHM4O2r2Ltz9wHaEK?w=273&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7',
-        type: 'Muscle Car',
+        type: 'ElectricCar',
         tags: ['Pony Car', 'Muscle', 'Iconic']
       },
       {
@@ -39,7 +41,7 @@ export class ContentListComponent {
         description: 'An iconic sports car featuring distinctive gullwing doors and a powerful inline-six engine.',
         creator: 'Mercedes-Benz',
         imgURL: 'https://th.bing.com/th/id/OIP.qQoAKowWULCOfKW2HTXIsAHaFj?w=252&h=189&c=7&r=0&o=5&dpr=1.3&pid=1.7',
-        type: 'Sports Car',
+        type: '',
         tags: ['Classic Sports Car', 'Gullwing', 'Luxury']
       },
       {
@@ -48,7 +50,7 @@ export class ContentListComponent {
         description: 'A British classic known for its elegant design and high-performance capabilities.',
         creator: 'Jaguar',
         imgURL: 'https://th.bing.com/th/id/OIP.4nCbM_ti4FXMT8ghcw40PQHaFj?rs=1&pid=ImgDetMain',
-        type: 'Roadster',
+        type: '',
         tags: ['British Classic', 'Convertible', 'Elegant']
       },
       {
@@ -57,7 +59,7 @@ export class ContentListComponent {
         description: 'A timeless German sports car that has become a symbol of precision engineering and performance.',
         creator: 'Porsche',
         imgURL: 'https://philipraby.co.uk/wp-content/uploads/2020/06/1.-911-Carrera-3.2-2048x1365.jpeg',
-        type: 'Coupe',
+        type: 'ElectricCar',
         tags: ['German Engineering', 'Classic Coupe', 'Performance']
       },
       {
@@ -66,7 +68,7 @@ export class ContentListComponent {
         description: 'A legendary American sports car with a sleek design and powerful V8 engine.',
         creator: 'Chevrolet',
         imgURL: 'https://th.bing.com/th/id/OIP.K-Kw9kqnRb9VvB2SIDRJxQHaE8?rs=1&pid=ImgDetMain',
-        type: 'Sports Car',
+        type: 'SportsCar',
         tags: ['American Muscle', 'V8', 'Stingray']
       },
        {
@@ -74,10 +76,44 @@ export class ContentListComponent {
         title: 'Tesla Model S',
         description: 'An electric sedan known for its cutting-edge technology and high-performance.',
         creator: 'Tesla',
-        imgURL: 'https://th.bing.com/th/id/OIP.xb-7H5a1hynUJiG9XNFEbAHaEY?pid=ImgDet&rs=1',
-        type: 'Electric Car',
+        imgURL: 'https://s3.amazonaws.com/media.mediapost.com/dam/cropped/2023/02/13/tesla2_4Wt7qZz_HJ6d3dj.png',
+        type: 'ElectricCar',
         tags: ['Innovative', 'Sustainable', 'High-Tech']
-      }
+      },
+      {
+        id: 8,
+        title: 'Dodge Challenger SRT Hellcat',
+        description: 'A beastly American muscle car boasting a supercharged V8 engine and aggressive styling.',
+        creator: 'Dodge',
+        imgURL: 'https://medias.fcacanada.ca/specs/dodge/challenger/year-2019/media/images/pano/2019-dodge-challenger-hero-mobile-blue-driving-racing-track_d2810fa3788d88f991e6f198a5e3d36b-1242x1085.jpg',
+        type: 'SportsCar',
+        tags: ['American Muscle', 'V8', 'Hellcat']
+      },
+      {
+        id: 9,
+        title: 'Ford Mustang GT',
+        description: 'An iconic American muscle car known for its aggressive styling and potent V8 engine.',
+        creator: 'Ford',
+        imgURL: 'https://th.bing.com/th/id/OIP.Hjl4CdNLqNyOiIUVSNi4zgAAAA?rs=1&pid=ImgDetMain',
+        type: 'SportsCar',
+        tags: ['American Muscle', 'V8', 'Mustang']
+    }
+    
+    
     );
+  }
+  search(str:string){
+     
+    for(let  i=0; i < this.contentArray.length; i++){
+      if(this.contentArray[i].title==str)
+      {
+        this.typePresent=true;
+        break;
+      }
+    
+    else if(this.contentArray[i].title!=str)
+     this.typePresent=false;
+    }
+    
   }
 }
