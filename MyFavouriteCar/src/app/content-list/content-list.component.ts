@@ -9,6 +9,11 @@ import { Content} from '../helper-file/content-interface'
 })
 export class ContentListComponent {
 
+  onContentAdded(newContent: Content) {
+  
+    console.log('New content added:', newContent);
+    this.contentArray = [...this.contentArray, newContent];
+  }
   name : string | undefined;
    contentArray: Content[] = [];
    typePresent:boolean | undefined;
