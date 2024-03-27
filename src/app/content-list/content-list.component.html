@@ -1,0 +1,30 @@
+<div>
+</div>
+<div *ngIf="searchedContent">
+  <app-content-card [content]="searchedContent" class="card" id="card"></app-content-card>
+</div>
+<form (submit)="searchContentByTitle()">
+  <input type="text" [(ngModel)]="title" name="title" placeholder="Enter title to search" required>
+  <button type="submit">Search</button>
+</form>
+<p>{{ message }}</p>
+  
+      
+    <div class="container">
+      <h2>No Type</h2>
+    <div class="card-none">
+        <app-content-card *ngFor="let item of contentArray | filterType:''" [content]="item"></app-content-card>
+    </div>
+    
+    <h2>Team Sports</h2>
+    <div class="card-none">
+        <app-content-card *ngFor="let item of contentArray | filterType:'Team Sport'" [content]="item"></app-content-card>
+    </div>
+    
+    <h2>Individual Sports</h2>
+    <div class="card-none">
+        <app-content-card *ngFor="let item of contentArray | filterType:'Individual Sport'" [content]="item"></app-content-card>
+    </div>
+    
+
+  
