@@ -16,13 +16,12 @@
     <app-content-card *ngFor="let item of contentArray | filterType:''" [content]="item"></app-content-card>
   </div>
 
-  <h2>Sport Cars</h2>
+  <h2>ElectricCar Cars</h2>
   <div class="card-none">
-    <app-content-card *ngFor="let item of contentArray | filterType:'Sport Cars'" [content]="item"></app-content-card>
+    <app-content-card *ngFor="let item of contentArray | filterType:'ElectricCar'" [content]="item"></app-content-card>
   </div>
 
-  <h2>Other Cars</h2>
+  <h2>SportsCar</h2>
   <div class="card-none">
-    <app-content-card *ngFor="let item of contentArray | filterType:'Other Cars'"
-      [content]="item"></app-content-card>
+    <app-content-card *ngFor="let item of contentArray | filterType:'SportsCar'" [content]="item"></app-content-card>
   </div>
