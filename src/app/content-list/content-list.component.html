@@ -8,23 +8,21 @@
   <button type="submit">Search</button>
 </form>
 <p>{{ message }}</p>
-  
-      
-    <div class="container">
-      <h2>No Type</h2>
-    <div class="card-none">
-        <app-content-card *ngFor="let item of contentArray | filterType:''" [content]="item"></app-content-card>
-    </div>
-    
-    <h2>Team Sports</h2>
-    <div class="card-none">
-        <app-content-card *ngFor="let item of contentArray | filterType:'Team Sport'" [content]="item"></app-content-card>
-    </div>
-    
-    <h2>Individual Sports</h2>
-    <div class="card-none">
-        <app-content-card *ngFor="let item of contentArray | filterType:'Individual Sport'" [content]="item"></app-content-card>
-    </div>
-    
 
-  
+
+<div class="container">
+  <h2>No Type</h2>
+  <div class="card-none">
+    <app-content-card *ngFor="let item of contentArray | filterType:''" [content]="item"></app-content-card>
+  </div>
+
+  <h2>Sport Cars</h2>
+  <div class="card-none">
+    <app-content-card *ngFor="let item of contentArray | filterType:'Sport Cars'" [content]="item"></app-content-card>
+  </div>
+
+  <h2>Other Cars</h2>
+  <div class="card-none">
+    <app-content-card *ngFor="let item of contentArray | filterType:'Other Cars'"
+      [content]="item"></app-content-card>
+  </div>
