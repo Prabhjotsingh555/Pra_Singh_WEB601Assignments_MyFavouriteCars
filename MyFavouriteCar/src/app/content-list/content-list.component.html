@@ -1,0 +1,15 @@
+<!-- 
+<div *ngFor="let content of contentArray.slice(0, 5); let first = first" class="content-card-container" [ngClass]="{'first': first}" >
+    <app-content-card [content]="content"></app-content-card>
+    
+</div>   -->
+<app-modify-content (contentAdded)="onContentAdded($event)"></app-modify-content>
+
+<br>
+<br>
+<div *ngFor="let content of contentArray; let first = first" class="content-card-container" [ngClass]="{'first': first}" >
+    <app-content-card [content]="content"></app-content-card>
+    
+</div>
+<br>
+<br>

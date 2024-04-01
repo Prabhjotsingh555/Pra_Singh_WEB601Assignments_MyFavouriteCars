@@ -1,15 +1,27 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
-import { ContentCardComponent } from './content-card/content-card.component';
+import { Component, OnInit } from '@angular/core';
+import { carserviceService } from './car-service.service';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [CommonModule, RouterOutlet,ContentCardComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
 })
-export class AppComponent {
-  title = 'MyFavouriteCar';
+export class AppComponent implements OnInit {
+  title = 'Rah_Nakarani_NatureDiary';
+  singleContentItem: any;
+
+  constructor(private carservice: carserviceService) {}
+  ngOnInit(): void {
+    this.loadSingleContentItem();
+  }
+
+  loadSingleContentItem() {
+    const idOfContentItemToLoad = 1;
+    this.carservice
+      .getContentItemById(idOfContentItemToLoad)
+      .subscribe((data) => {
+        this.singleContentItem = data;
+        console.log(`Content Item at id: ${idOfContentItemToLoad}`);
+      });
+  }
 }
