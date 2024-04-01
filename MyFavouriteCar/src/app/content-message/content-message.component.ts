@@ -19,6 +19,4 @@ export class ContentMessageComponent implements OnInit {
       this.messages.push(message);
     })
   }
-
-
 }
