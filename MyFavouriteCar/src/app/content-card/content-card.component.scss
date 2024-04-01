@@ -1,14 +1,61 @@
-.content-card{
-    border: 1px solid black;
-    border-radius: 5%;
-    width: 70%;
-    padding: 5%;
-    margin: 2%;
+/* Style for content card */
+.content-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: box-shadow 0.3s ease;
+    cursor: pointer;
 }
 
+/* Style for card image */
+.card-img {
+    width: 100%;
+    border-radius: 8px;
+}
 
-.imgs {
-    margin-left: 15%;
-    width: 70%;
-    border-radius: 10%;
+/* Style for card title */
+.card-title {
+    text-align: center;
+    margin-top: 15px;
+}
+
+/* Style for card description */
+.card-description {
+    margin-top: 10px;
+}
+
+/* Style for card creator */
+.card-creator {
+    margin-top: 5px;
+}
+
+/* Style for card type */
+.card-type {
+    margin-top: 5px;
+}
+
+/* Style for card tags */
+.card-tags {
+    display: block;
+    margin-top: 10px;
+}
+
+/* Style for tag list */
+.card-tag-list {
+    list-style-type: none;
+    margin: 5px 0 0 0;
+    padding: 0;
+}
+
+/* Style for individual tag */
+.card-tag-list li {
+    display: inline-block;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+/* Hover effect for content card */
+.content-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
